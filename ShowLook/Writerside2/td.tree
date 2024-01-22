@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="td"
+                 name="Technical documentation"
+                  start-page="Technical-documentation.md">
+
+    <toc-element topic="Technical-documentation.md"/>
+    <toc-element topic="C4-model.md"/>
+    <toc-element topic="Data-architecture.md"/>
+    <toc-element topic="Infrastructure-architecture.md"/>
+    <toc-element topic="ML-strategy.md"/>
+    <toc-element topic="Estimation.md"/>
+    <toc-element topic="Scrum-Information.md"/>
+</instance-profile>
