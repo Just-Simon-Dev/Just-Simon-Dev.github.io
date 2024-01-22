@@ -15,6 +15,8 @@ classDiagram
     ML: +int Grade
     ML: +bool IsActualGeneration
     ML: +bool IsFinished
+    ML: +DateTime CreatedAt
+    ML: +DateTime UpdatedAt
     ML: +Predict()
     ML: -PrepareData()
     
@@ -31,6 +33,8 @@ classDiagram
     Generation: +int FinishedModels
     Generation: +ML BestModel
     Generation: +bool IsActualGeneration
+    Generation: +DateTime CreatedAt
+    Generation: +DateTime UpdatedAt
     Generation: +FinishGeneration()
     Generation: -CreateNewGeneration()
     Generation: -SetActualGenerationToFalse()
@@ -38,7 +42,7 @@ classDiagram
     
 ```
 
-### Outfits Data Analysis Table
+### Admin table
 
 ## Apache Casandra Architecture
 

@@ -12,8 +12,9 @@
 | [Infrastructure] Create Fast Api project                | 5              | Szymon       |              |
 | [Task] Create Fast Api project based ML                 |                |              |              |
 | [Backend] Create AI Update worker                       | 5              | Szymon       |              |
-| [Backend] Create data layer with data preparation       | 5              | Szymon       |              |
-| [Backend] Create ML layer                               | 5              | Szymon       |              |
+| [Backend] Create New Generation Service layer           | 20             | Szymon       |              |
+| [Backend] Create Models Service layer                   | 20             | Szymon       |              |
+| [Backend] Create Data Repository layer                  | 5              | Szymon       |              |
 | [Task] I can see outfits                                |                |              |              |
 | [Front] Outfit View                                     |                | Jakub        |              |
 | [Front] Outfit Service                                  |                | Jakub        |              |
@@ -22,13 +23,11 @@
 | [Front] Admin login view                                |                | Jakub        |              |
 | [Front] Admin login service                             |                | Jakub        |              |
 | [Backend] Login logic                                   | 20             | Szymon       |              |
-| [Task] I can see analysis charts and rated outfits      |                |              |              |
+| [Task] I can see analysis charts                        |                |              |              |
 | [Analysis] Decide what charts will be necessary         | 50             | Szymon       |              |
 | [Front] Data Analysis View                              |                | Jakub        |              |
-| [Front] Rated Outfits View                              |                | Jakub        |              |
-| [Front] Rated Outfits Service                           |                | Jakub        |              |
 | [Front] Data Analysis Service                           |                | Jakub        |              |
-| [Backend] Data Analysis Logic                           | 30             | Szymon       |              |
+| [Backend] Data Analysis Logic                           | 50             | Szymon       |              |
 | [Task] Build Infrastructure                             |                |              |              |
 | [Infrastructure] Make Docker Infrastructure             | 40             | Szymon       |              |
 | [Infrastructure] Make Kubernetes Infrastructure         | 70             | Szymon       |              |
@@ -53,4 +52,4 @@
 | [Management] Daily Scrum                                |                | Stanisław    |              |
 | [Management] Communication                              |                |              |              |
 | [Management] Board Updates                              |                | Stanisław    |              |
-| Summary                                                 | 392,5 (785)    |              |              |
+| Summary                                                 | 440,5 (881)    |              |              |
