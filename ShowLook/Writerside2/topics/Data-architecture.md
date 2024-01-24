@@ -44,6 +44,38 @@ classDiagram
 
 ### Admin table
 
-## Apache Casandra Architecture
+```mermaid
+classDiagram 
+    Admin <|-- ML
+    Admin: +int Id
+    Admin: +string Name
+    Admin: +string Surname
+    Admin: +string HashedPassword
+    Admin: +bool IsDisabled
+    Admin: +DateTime CreatedAt
+    Admin: +DateTime UpdatedAt
+    Admin: +DisableAdmin()
+    Admin: +CheckPassword()
+    Admin: -IsHashMatched()
+```
+
+### Clothes table
+
+```mermaid
+classDiagram 
+    Clothes <|-- ML
+    Clothes: +int Id
+    Clothes: +string Name
+    Clothes: +string Type
+    Clothes: +string ImageUrl
+    Clothes: +DateTime CreatedAt
+    Clothes: +DateTime UpdatedAt
+```
 
 ## S3 Minio Architecture
+```mermaid
+classDiagram 
+    ClothesImages--|>ML
+    ClothesImages: +int Url
+    ClothesImages: +File Image
+```

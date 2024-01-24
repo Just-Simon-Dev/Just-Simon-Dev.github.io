@@ -127,9 +127,8 @@ Container_Boundary(b2, "Fast Api System"){
 }
 
 Boundary(b3, "databases"){
-    ContainerDb(db1, "clothes database" "Apache Casandra", "stores data about clothes.")
     ContainerDb(db2, "clothes image database", "MinIO", "stores the images of clothes.")
-    ContainerDb(db3, "Data database", "Postgres", "stores data about ML models and data analysis information")
+    ContainerDb(db3, "Data database", "Postgres", "stores data about ML models and data analysis information and clothes.")
 }
 
 Rel(SystemA, db2, "Read from")
@@ -141,7 +140,6 @@ Rel(ComponentOutfitService, ComponentDataRepository, "Uses")
 Rel(ComponentDataService, ComponentDataRepository, "Uses")
 Rel(ComponentDataRepository, ComponentMiddleware, "Uses")
 Rel(ComponentMiddleware, db3, "Writes to, read from")
-Rel(ComponentMiddleware, db1, "Writes to, read from")
 Rel(ComponentWorker, ComponentGenerationController, "Making Api Calls")
 Rel(ComponentGenerationController, ComponentGenerationService, "Uses")
 Rel(ComponentGenerationController, ComponentModelsService, "Uses")
@@ -161,7 +159,6 @@ UpdateRelStyle(ComponentOutfitService, ComponentDataRepository, $textColor="blac
 UpdateRelStyle(ComponentDataService, ComponentDataRepository, $textColor="black", $offsetX="-180")
 UpdateRelStyle(ComponentDataRepository, ComponentMiddleware, $textColor="black", $offsetX="-15")
 UpdateRelStyle(ComponentMiddleware, db3, $textColor="black", $offsetX="-65")
-UpdateRelStyle(ComponentMiddleware, db1, $textColor="black", $offsetX="-25")
 UpdateRelStyle(ComponentWorker, ComponentGenerationController, $textColor="black", $offsetX="-95")
 UpdateRelStyle(ComponentGenerationController, ComponentGenerationService, $textColor="black", $offsetX="-15")
 UpdateRelStyle(ComponentGenerationController, ComponentModelsService, $textColor="black", $offsetY="100", $offsetX="-15")
@@ -173,4 +170,4 @@ UpdateRelStyle(ComponentAdminFormService, ComponentAdminRepository, $textColor="
 UpdateRelStyle(ComponentAdminRepository, ComponentMiddleware, $textColor="black")
 
 ```
-[mermaid documentation](https://mermaid.ink/img/pako:eNq1WFlv2zgQ_iuE0IcEcAJbtuMD2AfXQYssmjaIUXR3YWBBS7RNRCINkk7qBvnvHZKyLut0dvMSaTQz39xD-tXxuE-cqTMfzDlT5KdaMkVVQNBiy1--cP6EZsLbUkU8tRcEfcTeE2H-ks15uOOMMHWxOEhFwlkHLZ1PQutgPrK0paOJf-JnvPAE3akOeiTYU5Y8CwL-ItFeEiGR4sgTBCuCdhQAfMT3ak0VWgseIrUlaHaHMOjd0GeC1oT4K7AD4RWw6c-AdLlk2iimMGVE_PuR75mPxeFi1TNgcnf9lajYrkv0umQI_hI34qdvBlqrEjwIiNDyloYetYXJF-tI_h3nHJM6INoHoaX52jxb_4zZJWbcYoWzRmgKmjEcHCSVrc3YgPs-aOjAE0RI2-JtsVCyA_-J90TZJrJKGktllXEzP6TsExdh1kJDRpre1DysJYx9Ad8gyqpAbRIWRDxTj6SyElGs3uRl6Uj8rL3S8ZYeF3HwQyj5AMAAVUdkhSWJo6IFGHk5hqIuQylrsukpMQpe7rGJ9TH4WEv8IsaSRiFPQabiXY4XZxc6zAdFFAcSrbmwpVHn4CPZcUkVF4fYx4RkAfLvCxt27VDUoibgtc5loaxvWd1Zjs9EqbxfkGFTUlVg99T3A_KCRZw2XQEoIUd5yr0_Egnykq5gOOrweZwxmIqUM_RC1TYupSroH1w8Ra1yh77vfN2FlmYxMs9bwhCMyz0O4uIELKgt_kwAHjoIzR7uDNxb2fRzzVjGUqHZjibjr3z6fY6Rsq39FXoi-Vbb3nM7zXUnJbZXRSbRnarvHGh5jRfCIV0U6gCN3ig397pIZQrdEsrHSwo0tKy6LJq5m22th_c0V8phvSKTXjNFkZRCX4sfAyHTRRCVze3qwrfr0gs4zEmZCpuu2B2GUYLmWAKMwNYcCZZFjJE5kex1yvu0fjetn4Z4Q1Iotu3Y3beMcj2yDadp7xr9_TiSWbUPXKqN0H4Xm33_5ZhEHUT74TjLKYPEhklOTWAfSZAcfSK_4HjjmzOLYctwVB4vYCWANbpD59DVskL69FRQJlsBWL5Rv0tSoCEPWrYBi6VzIBXbpRz9fdJpvpItUCyc5olK64eAs7A-sHSQOMl2iWCvueBxQdTO4-gUUZH3YsnqgVschhpNJ4OzTktdNh8q8pkDO0PDKWer1BYefStPacVmnHJWnYYqdLSp7iWzhw7QslCHgOQm2Ad9AZzzgIs_ls4qgDuWHpcf-HotifoLaFfDboryt6a4XaO5TG_FGPo_0fIjqx6r120IdsZg_e88bTmTa4F7gxNgE4hat-snchF2jUPnKc3lcVwfuNqWaQAzrEQ52Rz1Gm_aaOw10ehWa2y4a-pxJtU47RfRu8PfbmNVwumeyM6GdgY0WVW1BlyN2xrQfE8Wg7fBKtmoLQdA28V6zlDtdZuZ0GAnn-PdWXPn0uk4IYH7B_WdqWMubUtH_-gJN5upudIJ4IJbCfDhveKLA_OcqRJ70nH2xppbijcCh850jQMJ1B1m_3AeHpng1Zm-Oj-d6dXkejwZjgaDvtsf9buDm0nHOQDZ7Y6vJ1135A7d3mTk3gxv3jrOL6Oid92fTPruYDQGhslwPOw4xNcu3tvflc3Py2-_AQBr6Bc?type=png)
+[mermaid documentation](https://mermaid.ink/img/pako:eNq1WFtvGjkU_iuW1YdEItEAIQSkfaBErbIqbRRUdXeFtDIzBqzM2Mg2pDTKf--xDXODuZHdvGTmjH2-79xtXrEvAoqHeHwzFlzTn3rGNdMhRdOVePkixDMaSX_FNPX1RlL0kfjPlAczPhbRWnDK9cV0pzSNRi00w5-k0cED5GQzbIR_ki2Z-pKtdQs9UeJrJx6FoXhRaKOoVEgL5EtKNEVrBgABEhu9YBotpIiQXlE0ekAE9C7ZlqIFpcEceCAyh2XmMyBdzrghxTVhnMp_P4oND4jcXczbFkytr79SHfO6RK8zjuAvMSN--mahjSopwpBKs9_J0JNhmHxxhuTfSc4wZRxibJBmt1jYZ2efpV1A455okiVhJGjESbhTTDWmsQTzA9DQgifwkOHir4jUqgX_qf_M-HLPSlmmqozcKIgY_yRklGVoxcjI69IjZoflF4olYrwM1AVhSuWW-TQVlb3E6U1eZliRrbHK-Fv5QsbOjyDlQwADVOOROVE09orZwOnLwRVVEUqxyYangBS8TIj19cH5xOz4RS2TWi5PQab8XYwXRxcqLABFjIQKLYR0qVFl4BNdC8W0kLvYxkTkAPLvU-d2Y9C-RK3DK43LQjnbsrqzKz5TrfN2QYRtSpWBTVgQhPSFyDhsJgNQIt7HKff-RBXsV2wOzdG4zxecQ1dkgqMXpldxKpVB_xDyeV8qD-j7OjBV6GQOI_O8ohxBu9yQME5OwILcElsK8FBBaPT4YOHeirpfx7ZlojQarVnS_oq73-cYKVvaX6Emkm-V5T123dxUUsK9zDOJ7lR-50CLc_wkHDJJoXdQ6LViMzFJqlLoTlDcXlKgkVtq0qKeudnSenxPcaUMNiMyqTWbFEkqdM32gyNUOgn2aXM_vwhcwvihgD6pEIvIkqac58qCP3xzjwpowSrTUu1KW377vdcp69P6u7GlWbWPQumlNLxSmlNWTr4cnGyMdB8OvZZxcHyUuCBDwXrhiYbJOWVvJJxFAnvAsMsyK0rPAtC_gZoppzGUoCrZfTzCi_aWABaPv--KntCQBy0aV6d350BKRkEx-vt2p9cVtOzTm9Nr9nn2Q8LB1ZwuWkgeRfuoKVf2wP3kLgnf6Z3lTe60NRWajppVlZaqoDyWhCUHdoaG45WNInTyuFl6MjpN43hl2QmkREeTJJ1xN-hBy1TvQpprRB_MpWssQiH_mOF5CPca0wI_iMVCUf0XyK56Xkryt5F0PKu5SG9JN_k_0fKdpxqr7dUEO6M__neWNmytlcDtmyNg64hKs6sb6ynsCoPOU5qL41214ypLpgZMrxTlaABUa7wt11hzMlTjDMpxmo-Ndzur2XwphTMZnK3kZgTqDJZKAld3TQnUn2qnwZtgFcy_huXadAye0wLbXj0KNSboOdad1SUucQtHFG4ALMBDbK81M2x-FoS7xdBeeiSsgqsArCMbLaY77uOhlhvawhvL5p6RpSQRHi5IqEC6JvwfIaLDInjFw1f8Ew-vev3ru0HvttvvtTsdr-91W3gH4u5t-3rgdfp9bzC49Qbw-a2Ff1kV7evuYNDt3PS7Xrtz6930Oi1MA2PjxP30an-BffsNNGKcuw?type=png)
